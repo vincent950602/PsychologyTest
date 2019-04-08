@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>问卷调查</title>
+    <style>
+        body{background: #f1f1f1
+        }
+        .center_left {
+            margin:0 auto;
+            width:894px;
+            text-align:left;
+            background: #ffffff;
+        }
+        #center{
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+<div class="center_left">
+    <img th:src="@{../resources/picture/title.png}"/>
+    <h1 id="center">这是一个问卷调查！</h1>
+    <form action="#" th:action="@{/index}" th:object="${psychologySubmit}" method="post"><!--通过th:object访问对象的方式-->
+        1.您的性别是？<br /><br />
+        <label><input name="Sex" type="radio" value="1" th:field="*{ans_1}"/>男 </label>
+        <label><input name="Sex" type="radio" value="0" th:field="*{ans_1}"/>女 </label><br /><br />
+        2.您目前是大学几年级？<br /><br />
+        <label><input name="Class" type="radio" value="1" th:field="*{ans_2}"/>大一 </label>
+        <label><input name="Class" type="radio" value="2" th:field="*{ans_2}"/>大二 </label>
+        <label><input name="Class" type="radio" value="3" th:field="*{ans_2}"/>大三 </label>
+        <label><input name="Class" type="radio" value="4" th:field="*{ans_2}"/>大四 </label>
+        <label><input name="Class" type="radio" value="5" th:field="*{ans_2}"/>大五 </label><br /><br />
+        3.您最喜欢水果？<br /><br />
+        <label><input name="Fruit" type="radio" value="1" th:field="*{ans_3}"/>菠萝蜜 </label>
+        <label><input name="Fruit" type="radio" value="2" th:field="*{ans_3}"/>西瓜 </label>
+        <label><input name="Fruit" type="radio" value="3" th:field="*{ans_3}"/>榴莲 </label>
+        <label><input name="Fruit" type="radio" value="4" th:field="*{ans_3}"/>草莓 </label>
+        <label><input name="Fruit" type="radio" value="5" th:field="*{ans_3}"/>火龙果 </label>
+        <label><input name="Fruit" type="radio" value="6" th:field="*{ans_3}"/>其他 </label>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+</div>
+</body>
+</html>
